@@ -1,5 +1,6 @@
 #!/bin/bash
 
+set -x
 set -eE 
 trap 'echo Error: in $0 on line $LINENO' ERR
 

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -eE 
+set -xeE 
 trap 'echo Error: in $0 on line $LINENO' ERR
 
 cleanup_loopdev() {

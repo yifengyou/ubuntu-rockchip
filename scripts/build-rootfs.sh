@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -eE 
+set -xeE 
 trap 'echo Error: in $0 on line $LINENO' ERR
 
 if [ "$(id -u)" -ne 0 ]; then 
@@ -139,7 +139,7 @@ fi
 # Build the rootfs
 lb build
 
-set -eE 
+set -xeE 
 
 # Tar the entire rootfs
 (cd chroot/ &&  tar -p -c --sort=name --xattrs ./*) | xz -3 -T0 > "ubuntu-${RELASE_VERSION}-preinstalled-${FLAVOR}-arm64.rootfs.tar.xz"
